@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-lavender: #E6E6FA;
+  --color-thistle: #D8BFD8;
+  --color-peach: #FFDAB9;
+  --color-sage: #C8D8C4;
+  --color-slate-lavender: #C3C1CD;
+  --color-deep-plum: #261843;
+  --color-muted-plum: #695E7E;
+
+  --font-editorial: 'Kanit', sans-serif;
+  --font-sans: 'Kanit', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: monospace;
+}
+
+@layer base {
+  :root {
+    --bg-lavender: #E6E6FA;
+    --bg-thistle: #D8BFD8;
+    --bg-peach: #FFDAB9;
+    --bg-sage: #C8D8C4;
+    --bg-slate: #C3C1CD;
+    --text-plum: #261843;
+    --text-muted: #695E7E;
+
+    /* Neumorphism: Balanced Dual Shadows on Lavender Dream Base */
+    --neu-dark-shadow: rgba(38, 24, 67, 0.10);
+    --neu-light-shadow: #FFFFFF;
+    --neu-inset-dark: rgba(38, 24, 67, 0.12);
+    --neu-inset-light: #FFFFFF;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 96px;
+    background-color: #E6E6FA;
+    color: #261843;
+  }
+
+  body {
+    background-color: #E6E6FA;
+    color: #261843;
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Custom Scrollbar - Soft Lavender & Deep Plum */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #E6E6FA;
+}
+::-webkit-scrollbar-thumb {
+  background: #C3C1CD;
+  border-radius: 9999px;
+  border: 2px solid #E6E6FA;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D8BFD8;
+}
+
+/* Typography & Headings */
+.font-editorial {
+  font-family: var(--font-editorial);
+  letter-spacing: -0.02em;
+}
+
+.font-mono-tag {
+  font-family: var(--font-mono);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.hero-heading {
+  background: linear-gradient(135deg, #261843 0%, #372773 60%, #5C4F8C 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Neumorphic Extruded Surface (Cards & Panels) */
+.neu-card {
+  background: #FAF8FF;
+  border: 1px solid rgba(195, 193, 205, 0.45);
+  box-shadow: 10px 10px 24px var(--neu-dark-shadow), -10px -10px 24px var(--neu-light-shadow);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+}
+
+.neu-card:hover {
+  box-shadow: 14px 14px 30px rgba(38, 24, 67, 0.14), -12px -12px 28px #FFFFFF;
+  border-color: rgba(216, 191, 216, 0.8);
+}
+
+.neu-card-sm {
+  background: #FAF8FF;
+  border: 1px solid rgba(195, 193, 205, 0.45);
+  box-shadow: 5px 5px 14px var(--neu-dark-shadow), -5px -5px 14px var(--neu-light-shadow);
+}
+
+/* Inset / Sunken Concave Well */
+.neu-inset {
+  background: #EAE6F4;
+  border: 1px solid rgba(195, 193, 205, 0.35);
+  box-shadow: inset 3px 3px 7px var(--neu-inset-dark), inset -3px -3px 7px var(--neu-inset-light);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.neu-inset:focus-within {
+  border-color: rgba(38, 24, 67, 0.4);
+  box-shadow: inset 4px 4px 9px rgba(38, 24, 67, 0.16), inset -4px -4px 9px #FFFFFF;
+}
+
+/* Tactile Neutral Button */
+.neu-button {
+  background: #FAF8FF;
+  border: 1px solid rgba(195, 193, 205, 0.6);
+  box-shadow: 5px 5px 14px var(--neu-dark-shadow), -5px -5px 14px var(--neu-light-shadow);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  color: #261843;
+}
+
+.neu-button:hover {
+  background: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 7px 7px 18px rgba(38, 24, 67, 0.15), -7px -7px 18px #FFFFFF;
+  color: #261843;
+  border-color: #D8BFD8;
+}
+
+.neu-button:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: inset 3px 3px 7px var(--neu-inset-dark), inset -3px -3px 7px var(--neu-inset-light);
+}
+
+/* Primary Deep Plum Button (#261843) */
+.btn-editorial-primary {
+  background: linear-gradient(135deg, #261843 0%, #372773 100%);
+  color: #FFFFFF;
+  font-weight: 700;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 6px 6px 18px rgba(38, 24, 67, 0.22), -4px -4px 12px rgba(255, 255, 255, 0.8);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-editorial-primary:hover {
+  background: linear-gradient(135deg, #321E59 0%, #44328A 100%);
+  transform: translateY(-2px);
+  box-shadow: 8px 8px 24px rgba(38, 24, 67, 0.3), -5px -5px 16px rgba(255, 255, 255, 0.9);
+}
+
+.btn-editorial-primary:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+/* Warm Peach Accent Button (#FFDAB9) */
+.btn-peach-accent {
+  background: linear-gradient(135deg, #FFE5CE 0%, #FFDAB9 100%);
+  color: #261843;
+  font-weight: 700;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 6px 6px 16px rgba(38, 24, 67, 0.1), -6px -6px 16px #FFFFFF;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-peach-accent:hover {
+  background: linear-gradient(135deg, #FFF0DC 0%, #FFE0C5 100%);
+  transform: translateY(-2px);
+  box-shadow: 8px 8px 20px rgba(38, 24, 67, 0.16), -8px -8px 20px #FFFFFF;
+}
+
+/* Sage Green Accent Pill / Badge (#C8D8C4) */
+.badge-sage {
+  background-color: #C8D8C4;
+  color: #1E301B;
+  border: 1px solid rgba(200, 216, 196, 0.8);
+  box-shadow: 3px 3px 8px rgba(38, 24, 67, 0.06), -3px -3px 8px #FFFFFF;
+}
+
+/* Thistle / Lilac Accent Pill (#D8BFD8) */
+.badge-thistle {
+  background-color: #D8BFD8;
+  color: #261843;
+  border: 1px solid rgba(216, 191, 216, 0.8);
+  box-shadow: 3px 3px 8px rgba(38, 24, 67, 0.06), -3px -3px 8px #FFFFFF;
+}
+
+/* Peach Accent Pill (#FFDAB9) */
+.badge-peach {
+  background-color: #FFDAB9;
+  color: #3D2411;
+  border: 1px solid rgba(255, 218, 185, 0.8);
+  box-shadow: 3px 3px 8px rgba(38, 24, 67, 0.06), -3px -3px 8px #FFFFFF;
+}
+
+/* Segmented Navigation Pill */
+.nav-pill {
+  background: rgba(245, 242, 253, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(195, 193, 205, 0.5);
+  box-shadow: 6px 6px 20px rgba(38, 24, 67, 0.08), -6px -6px 20px #FFFFFF;
+}
+
+/* Status Indicator */
+.status-led {
+  background-color: #261843;
+  box-shadow: 0 0 10px #261843, 0 0 16px rgba(38, 24, 67, 0.45);
+}
+
+/* Marquee Continuous Animations & Fade Mask */
+@keyframes marquee-scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marquee-scroll-right {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+.animate-marquee-left {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll-left 42s linear infinite;
+}
+
+.animate-marquee-right {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll-right 42s linear infinite;
+}
+
+.animate-marquee-left:hover,
+.animate-marquee-right:hover {
+  animation-play-state: paused;
+}
+
+.marquee-mask {
+  mask-image: linear-gradient(to right, transparent 0%, black 7%, black 93%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 7%, black 93%, transparent 100%);
+}
+
+/* Typewriter Blinking Cursor */
+@keyframes blink-cursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-cursor-blink {
+  animation: blink-cursor 0.9s infinite;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

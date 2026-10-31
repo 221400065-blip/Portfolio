@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="avatar-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A" />
+      <stop offset="50%" stop-color="#1E293B" />
+      <stop offset="100%" stop-color="#0284C7" />
+    </linearGradient>
+    <linearGradient id="ring-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06B6D4" />
+      <stop offset="50%" stop-color="#3B82F6" />
+      <stop offset="100%" stop-color="#10B981" />
+    </linearGradient>
+    <linearGradient id="initials-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#93C5FD" />
+    </linearGradient>
+    <filter id="avatar-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="15" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background Base Circle -->
+  <circle cx="200" cy="200" r="180" fill="url(#avatar-bg)" />
+
+  <!-- Outer Tech Orbit Rings -->
+  <circle cx="200" cy="200" r="176" fill="none" stroke="url(#ring-gradient)" stroke-width="3" stroke-dasharray="16 10" opacity="0.8" />
+  <circle cx="200" cy="200" r="162" fill="none" stroke="#38BDF8" stroke-width="1.5" opacity="0.3" />
+
+  <!-- Decorative Orbit Dots -->
+  <circle cx="340" cy="110" r="6" fill="#06B6D4" filter="url(#avatar-glow)" />
+  <circle cx="70" cy="290" r="5" fill="#10B981" filter="url(#avatar-glow)" />
+  <circle cx="330" cy="280" r="4.5" fill="#6366F1" filter="url(#avatar-glow)" />
+
+  <!-- Developer Silhouette with Tech Glass Plate -->
+  <g opacity="0.95">
+    <!-- Shoulder / Body curve -->
+    <path d="M 100,350 C 100,275 140,245 200,245 C 260,245 300,275 300,350 Z" fill="#090D16" stroke="rgba(255,255,255,0.12)" stroke-width="2" />
+    <!-- Head / Face Silhouette -->
+    <circle cx="200" cy="170" r="58" fill="#1E293B" stroke="url(#ring-gradient)" stroke-width="2.5" />
+    <!-- Initials inside Avatar -->
+    <text x="200" y="185" fill="url(#initials-gradient)" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="44" font-weight="900" text-anchor="middle" letter-spacing="2">AT</text>
+  </g>
+
+  <!-- Code Tag Overlays -->
+  <g transform="translate(60, 180)">
+    <rect width="64" height="28" rx="14" fill="#0F172A" stroke="#06B6D4" stroke-width="1.5" />
+    <text x="32" y="18" fill="#38BDF8" font-family="monospace" font-size="12" font-weight="700" text-anchor="middle">&lt;AI/&gt;</text>
+  </g>
+
+  <g transform="translate(276, 180)">
+    <rect width="68" height="28" rx="14" fill="#0F172A" stroke="#10B981" stroke-width="1.5" />
+    <text x="34" y="18" fill="#34D399" font-family="monospace" font-size="12" font-weight="700" text-anchor="middle">{JS}</text>
+  </g>
+
+  <!-- Status Light Beacon -->
+  <circle cx="200" cy="365" r="7" fill="#10B981" filter="url(#avatar-glow)" />
+  <circle cx="200" cy="365" r="3.5" fill="#FFFFFF" />
+</svg>
